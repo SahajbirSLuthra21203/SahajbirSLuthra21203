@@ -1,7 +1,7 @@
 - 👋 Hi, I’m @SahajbirSLuthra21203
 - 👀 I’m interested in ...Coding and Designing
-- 🌱 I’m currently learning ...C 
-- 💞️ I’m looking to collaborate on ...Designing Projects
+- 🌱 I’m currently learning ...C , Photoshop
+- 💞️ I’m looking to collaborate on ...Designing and Coding Projects
 - 📫 How to reach me ...email id:sahajvaliantqwe@gmail.com
 
 <!---
