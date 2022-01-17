@@ -1,0 +1,78 @@
+#Part-2
+import mysql.connector as m
+
+def display():
+    db=m.connect(host="localhost",user="root",passwd="tiger",database="artint")
+    cur=db.cursor()
+    cur.execute("select * from stationary")
+    rec=cur.fetchall()
+    print(rec)
+    
+def display1():
+    db=m.connect(host="localhost",user="root",passwd="tiger",database="artint")
+    cur=db.cursor()
+    cur.execute("select * from stationary")
+    rec=cur.fetchall()
+    return rec
+
+def store():
+    db=m.connect(host="localhost",user="root",passwd="tiger",database="artint")
+    cur=db.cursor()
+    
+    n=int(input("enter no. of records:"))
+    for i in range(n):
+        print()
+        print(f'enter data for record {i+1}')
+        ino=int(input("enter item number:"))
+        iname=input("enter item name:")
+        price=int(input("enter item price/unit:"))
+        qty=int(input("enter quantity:"))
+        date=input("enter date of arrival(yyyy-mm-dd):")
+        stmt=f'insert into stationary values({ino},"{iname}",{price},{qty},"{date}")'
+        cur.execute(stmt)
+        db.commit()
+    print()
+    db.close()
+
+def search():
+    #import mysql.connector as m
+    #db=m.connect(host="localhost",user="root",passwd="tiger",database="artint1")
+    #cur=db.cursor()
+    lst=display1()
+    print("on what basis do you want to search?:")
+    print("1-Item number")
+    print("2-Item name")
+    print("3-Price")
+    print("4-Quantity")
+    print("5-Date of Arrival")
+    n=int(input("enter option number-->"))
+    
+    if n==1:
+        ino=int(input("enter item number:"))
+        for i in lst:
+            if ino==i[0]:
+                print(i)
+    elif n==2:
+        iname=input("enter item name:")
+        for i in lst:
+            if iname==i[1]:
+                print(i)
+    elif n==3:
+        price=int(input("enter price:"))
+        for i in lst:
+            if price==i[2]:
+                print(i)
+ 
+    elif n==4:
+        qty=int(input("enter Quantity:"))
+        for i in lst:
+            if qty==i[3]:
+                print(i)
+    elif n==5:
+        date=int(input("enter no. of courses:"))
+        for i in lst:
+            if date==i[4]:
+                print(i)
+
+def 
+ 
